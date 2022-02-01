@@ -171,6 +171,9 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                       if (val.isEmpty) {
                         return 'الرجاء  ادخال كلمة السر';
                       }
+                        if(val.length<7){
+                        return 'يجب ان تحتوي كلمة السر على ٧ رموز او اكثر';
+                      }
                       
                       return null;
                     },
@@ -181,7 +184,22 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                   child: FFButtonWidget(
                     onPressed: () async {
                       if (!formKey.currentState.validate()) {
-                        return;
+                            showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text('فشل تسجيل الدخول'),
+              content: Text("رقم الهوية/الإقامة او كلمة السر خاطئة"),
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('موافق')),
+              ],
+            );
+          });
+
                       }
                         final String Driver_ID=emailTextController.text;
 
