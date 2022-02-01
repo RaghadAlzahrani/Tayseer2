@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/raghad/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml",
+        "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/0794a0e88982236f481f45651a70103f/jetified-play-services-auth-16.0.1/res/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "/Users/raghad/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/drawable-watch-v20/common_google_signin_btn_text_disabled.xml",
+        "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/0794a0e88982236f481f45651a70103f/jetified-play-services-auth-16.0.1/res/drawable-watch-v20/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "/Users/raghad/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml",
+        "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/0794a0e88982236f481f45651a70103f/jetified-play-services-auth-16.0.1/res/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml"
+    }
+]

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">387058871336-l71rmvvugfjrkhik3egnka13a56sncb6.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">387058871336</string>
+    <string name="google_api_key" translatable="false">AIzaSyAZRGVQjuhIQB_JuEcmYZ3UAPr0oEPrwfo</string>
+    <string name="google_app_id" translatable="false">1:387058871336:android:a439eee63eb6bb7d7e991d</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAZRGVQjuhIQB_JuEcmYZ3UAPr0oEPrwfo</string>
+    <string name="google_storage_bucket" translatable="false">tayseer-c7822.appspot.com</string>
+    <string name="project_id" translatable="false">tayseer-c7822</string>
+</resources>

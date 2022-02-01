@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "387058871336",
+    "project_id": "tayseer-c7822",
+    "storage_bucket": "tayseer-c7822.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387058871336:android:a439eee63eb6bb7d7e991d",
+        "android_client_info": {
+          "package_name": "com.flutterflow.tayseer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387058871336-2oc6h4gsbsbpg6fliffhg0od3j62amri.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.tayseer",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "387058871336-l71rmvvugfjrkhik3egnka13a56sncb6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZRGVQjuhIQB_JuEcmYZ3UAPr0oEPrwfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387058871336-l71rmvvugfjrkhik3egnka13a56sncb6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "387058871336-lmtjnp65svjmbs9093ck4hjuo0k8of3i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.tayseer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
