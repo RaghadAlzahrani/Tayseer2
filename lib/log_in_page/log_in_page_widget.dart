@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:tayseer/forget_password/forget_password_widget.dart';
 
 import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -179,7 +180,46 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                     },
                   ),
                 ),
-                
+                 Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 30, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        child: InkWell(
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ForgetPasswordWidget(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'إعادة تعيين كلمة السر',
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: Color(0xFF0D67B5),
+                              fontWeight: FontWeight.w800,
+                              fontSize: 16
+                            ),
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'هل نسيت كلمة السر؟ ',
+                        style: FlutterFlowTheme.bodyText1.override(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w800,
+                          fontSize: 16
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 Padding(
                   
                   padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
@@ -222,6 +262,8 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
 
 }
                     },
+                    
+
                     
                     text: 'تسجيل الدخول',
                     options: FFButtonOptions(
