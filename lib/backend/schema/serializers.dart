@@ -122,7 +122,7 @@ extension LatLngExtension on GeoPoint {
 
 DocumentReference toRef(String ref) => FirebaseFirestore.instance.doc(ref);
 
-T safeGet<T>(T Function() func, [Function(dynamic) reportError]) {
+T? safeGet<T>(T Function() func, [Function(dynamic)? reportError]) {
   try {
     return func();
   } catch (e) {

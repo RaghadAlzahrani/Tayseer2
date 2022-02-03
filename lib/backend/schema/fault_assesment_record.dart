@@ -50,8 +50,8 @@ abstract class FaultAssesmentRecord
 }
 
 Map<String, dynamic> createFaultAssesmentRecordData({
-  String carPlateNO,
-  String faultAssesment,
+  required String carPlateNO,
+  required String faultAssesment,
 }) =>
     serializers.toFirestore(
         FaultAssesmentRecord.serializer,
