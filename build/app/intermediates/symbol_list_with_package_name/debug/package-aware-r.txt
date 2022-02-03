@@ -17,6 +17,8 @@ attr imageAspectRatio
 attr imageAspectRatioAdjust
 attr scopeUris
 attr ttcIndex
+color androidx_core_ripple_material_light
+color androidx_core_secondary_text_default_material_light
 color browser_actions_bg_grey
 color browser_actions_divider_color
 color browser_actions_text_color
@@ -34,8 +36,6 @@ color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
 color notification_action_color_filter
 color notification_icon_bg_color
-color ripple_material_light
-color secondary_text_default_material_light
 dimen browser_actions_context_menu_max_width
 dimen browser_actions_context_menu_min_padding
 dimen compat_button_inset_horizontal_material
@@ -82,6 +82,7 @@ drawable common_google_signin_btn_text_light_normal_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable launch_background
+drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low

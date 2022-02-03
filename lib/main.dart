@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'Tracking/Tracking.dart';
 import 'auth/firebase_user_provider.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -13,7 +14,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp(MyApp());
+  runApp(Tracking());
 }
 
 class MyApp extends StatefulWidget {
@@ -58,7 +59,7 @@ class _MyAppState extends State<MyApp> {
               ),
             )
           : currentUser.loggedIn
-              ?  LogInPageWidget()
+              ? LogInPageWidget()
               : LogInPageWidget(),
     );
   }
