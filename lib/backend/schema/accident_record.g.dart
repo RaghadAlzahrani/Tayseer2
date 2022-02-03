@@ -162,14 +162,14 @@ class _$AccidentRecord extends AccidentRecord {
       (new AccidentRecordBuilder()..update(updates)).build();
 
   _$AccidentRecord._(
-      {this.faultAssesment,
-      this.accidentID,
-      this.accidentImage,
-      this.carInvolved,
-      this.dateTime,
-      this.location,
-      this.status,
-      this.reference})
+      {required this.faultAssesment,
+      required this.accidentID,
+      required this.accidentImage,
+      required this.carInvolved,
+      required this.dateTime,
+      required this.location,
+      required this.status,
+      required this.reference})
       : super._();
 
   @override

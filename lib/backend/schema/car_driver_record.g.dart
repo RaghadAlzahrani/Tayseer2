@@ -91,7 +91,7 @@ class _$CarDriverRecordSerializer
 
   @override
   CarDriverRecord deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CarDriverRecordBuilder();
 
@@ -99,7 +99,7 @@ class _$CarDriverRecordSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'Driver_ID':
           result.driverID = serializers.deserialize(value,
@@ -168,19 +168,19 @@ class _$CarDriverRecord extends CarDriverRecord {
   @override
   final DocumentReference<Object> reference;
 
-  factory _$CarDriverRecord([void Function(CarDriverRecordBuilder) updates]) =>
-      (new CarDriverRecordBuilder()..update(updates)).build();
+  factory _$CarDriverRecord([void Function(CarDriverRecordBuilder)? updates]) =>
+      (new CarDriverRecordBuilder()..update(updates!)).build();
 
   _$CarDriverRecord._(
-      {this.driverID,
-      this.firstName,
-      this.lastName,
-      this.license,
-      this.password,
-      this.phone,
-      this.email,
-      this.insurance,
-      this.reference})
+      {required this.driverID,
+      required this.firstName,
+      required this.lastName,
+      required this.license,
+      required this.password,
+      required this.phone,
+      required this.email,
+      required this.insurance,
+      required this.reference})
       : super._();
 
   @override

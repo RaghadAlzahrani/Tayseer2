@@ -51,11 +51,11 @@ abstract class AccidentRecord
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Accident');
 
-  static Stream<AccidentRecord> getDocument(DocumentReference ref) => ref
+  static Stream<AccidentRecord?> getDocument(DocumentReference ref) => ref
       .snapshots()
       .map((s) => serializers.deserializeWith(serializer, serializedData(s)));
 
-  static Future<AccidentRecord> getDocumentOnce(DocumentReference ref) => ref
+  static Future<AccidentRecord?> getDocumentOnce(DocumentReference ref) => ref
       .get()
       .then((s) => serializers.deserializeWith(serializer, serializedData(s)));
 
@@ -63,20 +63,20 @@ abstract class AccidentRecord
   factory AccidentRecord([void Function(AccidentRecordBuilder) updates]) =
       _$AccidentRecord;
 
-  static AccidentRecord getDocumentFromData(
+  static AccidentRecord? getDocumentFromData(
           Map<String, dynamic> data, DocumentReference reference) =>
       serializers.deserializeWith(serializer,
           {...mapFromFirestore(data), kDocumentReferenceField: reference});
 }
 
 Map<String, dynamic> createAccidentRecordData({
-  DocumentReference faultAssesment,
-  String accidentID,
-  String accidentImage,
-  DocumentReference carInvolved,
-  DateTime dateTime,
-  LatLng location,
-  String status,
+  required DocumentReference<Object> faultAssesment,
+  required String accidentID,
+  required String accidentImage,
+  required DocumentReference<Object> carInvolved,
+  required DateTime dateTime,
+  required LatLng location,
+  required String status,
 }) =>
     serializers.toFirestore(
         AccidentRecord.serializer,

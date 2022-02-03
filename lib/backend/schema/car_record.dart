@@ -45,8 +45,8 @@ abstract class CarRecord implements Built<CarRecord, CarRecordBuilder> {
 }
 
 Map<String, dynamic> createCarRecordData({
-  String carPlateNO,
-  DocumentReference driverId,
+  required String carPlateNO,
+  required DocumentReference<Object> driverId,
 }) =>
     serializers.toFirestore(
         CarRecord.serializer,

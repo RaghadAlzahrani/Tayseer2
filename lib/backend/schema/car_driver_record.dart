@@ -57,11 +57,11 @@ abstract class CarDriverRecord
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Car_driver');
 
-  static Stream<CarDriverRecord> getDocument(DocumentReference ref) => ref
+  static Stream<CarDriverRecord?> getDocument(DocumentReference ref) => ref
       .snapshots()
       .map((s) => serializers.deserializeWith(serializer, serializedData(s)));
 
-  static Future<CarDriverRecord> getDocumentOnce(DocumentReference ref) => ref
+  static Future<CarDriverRecord?> getDocumentOnce(DocumentReference ref) => ref
       .get()
       .then((s) => serializers.deserializeWith(serializer, serializedData(s)));
 
@@ -69,21 +69,21 @@ abstract class CarDriverRecord
   factory CarDriverRecord([void Function(CarDriverRecordBuilder) updates]) =
       _$CarDriverRecord;
 
-  static CarDriverRecord getDocumentFromData(
+  static CarDriverRecord? getDocumentFromData(
           Map<String, dynamic> data, DocumentReference reference) =>
       serializers.deserializeWith(serializer,
           {...mapFromFirestore(data), kDocumentReferenceField: reference});
 }
 
 Map<String, dynamic> createCarDriverRecordData({
-  DocumentReference driverID,
-  String firstName,
-  String lastName,
-  String license,
-  String password,
-  String phone,
-  String email,
-  String insurance,
+  required DocumentReference<Object> driverID,
+  required String firstName,
+  required String lastName,
+  required String license,
+  required String password,
+  required String phone,
+  required String email,
+  required String insurance,
 }) =>
     serializers.toFirestore(
         CarDriverRecord.serializer,
