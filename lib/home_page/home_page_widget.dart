@@ -1,3 +1,5 @@
+import 'package:tayseer/view_accidents/view_accidents_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -225,6 +227,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    GestureDetector(
+        onTap: ()async {
+            await Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ViewAccidentsWidget(),
+                        ),
+                        (r) => false,
+                      );
+        },
+        child :
                     Container(
                       width: 310,
                       height: 50,
@@ -257,9 +270,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               size: 28,
                             ),
                           ],
+                          
                         ),
                       ),
-                    ),
+                    ),),
                   ],
                 ),
               ),
