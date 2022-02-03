@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class GuidlinesWidget extends StatefulWidget {
-  const GuidlinesWidget({Key key}) : super(key: key);
+  const GuidlinesWidget({Key? key}) : super(key: key);
 
   @override
   _GuidlinesWidgetState createState() => _GuidlinesWidgetState();

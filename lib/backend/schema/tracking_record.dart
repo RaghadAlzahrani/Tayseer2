@@ -32,11 +32,11 @@ abstract class TrackingRecord
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Tracking');
 
-  static Stream<TrackingRecord> getDocument(DocumentReference ref) => ref
+  static Stream<TrackingRecord?> getDocument(DocumentReference ref) => ref
       .snapshots()
       .map((s) => serializers.deserializeWith(serializer, serializedData(s)));
 
-  static Future<TrackingRecord> getDocumentOnce(DocumentReference ref) => ref
+  static Future<TrackingRecord?> getDocumentOnce(DocumentReference ref) => ref
       .get()
       .then((s) => serializers.deserializeWith(serializer, serializedData(s)));
 
@@ -44,16 +44,16 @@ abstract class TrackingRecord
   factory TrackingRecord([void Function(TrackingRecordBuilder) updates]) =
       _$TrackingRecord;
 
-  static TrackingRecord getDocumentFromData(
+  static TrackingRecord? getDocumentFromData(
           Map<String, dynamic> data, DocumentReference reference) =>
       serializers.deserializeWith(serializer,
           {...mapFromFirestore(data), kDocumentReferenceField: reference});
 }
 
 Map<String, dynamic> createTrackingRecordData({
-  String carPlateNO,
-  DateTime time,
-  LatLng location,
+  required String carPlateNO,
+  required DateTime time,
+  required LatLng location,
 }) =>
     serializers.toFirestore(
         TrackingRecord.serializer,

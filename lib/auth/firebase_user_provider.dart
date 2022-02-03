@@ -7,7 +7,7 @@ class TayseerFirebaseUser {
   bool get loggedIn => user != null;
 }
 
-TayseerFirebaseUser currentUser;
+late TayseerFirebaseUser currentUser;
 bool get loggedIn => currentUser?.loggedIn ?? false;
 Stream<TayseerFirebaseUser> tayseerFirebaseUserStream() => FirebaseAuth.instance
     .authStateChanges()
@@ -15,4 +15,4 @@ Stream<TayseerFirebaseUser> tayseerFirebaseUserStream() => FirebaseAuth.instance
         ? TimerStream(true, const Duration(seconds: 1))
         : Stream.value(user))
     .map<TayseerFirebaseUser>(
-        (user) => currentUser = TayseerFirebaseUser(user));
+        (user) => currentUser = TayseerFirebaseUser(user!));

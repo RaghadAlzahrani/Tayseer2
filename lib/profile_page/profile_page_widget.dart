@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProfilePageWidget extends StatefulWidget {
-  const ProfilePageWidget({Key key}) : super(key: key);
+  const ProfilePageWidget({Key? key}) : super(key: key);
 
   @override
   _ProfilePageWidgetState createState() => _ProfilePageWidgetState();

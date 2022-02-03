@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SelectCarInvolvedCarsPageWidget extends StatefulWidget {
-  const SelectCarInvolvedCarsPageWidget({Key key}) : super(key: key);
+  const SelectCarInvolvedCarsPageWidget({Key? key}) : super(key: key);
 
   @override
   _SelectCarInvolvedCarsPageWidgetState createState() =>

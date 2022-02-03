@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CarNotFoundWidget extends StatefulWidget {
-  const CarNotFoundWidget({Key key}) : super(key: key);
+  const CarNotFoundWidget({Key? key}) : super(key: key);
 
   @override
   _CarNotFoundWidgetState createState() => _CarNotFoundWidgetState();

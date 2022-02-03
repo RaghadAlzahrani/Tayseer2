@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AddCarManuallyWidget extends StatefulWidget {
-  const AddCarManuallyWidget({Key key}) : super(key: key);
+  const AddCarManuallyWidget({Key? key}) : super(key: key);
 
   @override
   _AddCarManuallyWidgetState createState() => _AddCarManuallyWidgetState();
 }
 
 class _AddCarManuallyWidgetState extends State<AddCarManuallyWidget> {
-  TextEditingController textController;
+  late TextEditingController textController;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -91,7 +91,7 @@ class _AddCarManuallyWidgetState extends State<AddCarManuallyWidget> {
                         textAlign: TextAlign.center,
                         keyboardType: TextInputType.number,
                         validator: (val) {
-                          if (val.isEmpty) {
+                          if (val!.isEmpty) {
                             return 'الرجاء  ادخال رقم الهويه/الإقامة';
                           }
                           if (val.length < 10) {

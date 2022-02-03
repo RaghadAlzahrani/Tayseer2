@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ViewAccidentsWidget extends StatefulWidget {
-  const ViewAccidentsWidget({Key key}) : super(key: key);
+  const ViewAccidentsWidget({Key? key}) : super(key: key);
 
   @override
   _ViewAccidentsWidgetState createState() => _ViewAccidentsWidgetState();

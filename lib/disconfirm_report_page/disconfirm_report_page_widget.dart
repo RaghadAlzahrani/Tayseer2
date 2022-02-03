@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DisconfirmReportPageWidget extends StatefulWidget {
-  const DisconfirmReportPageWidget({Key key}) : super(key: key);
+  const DisconfirmReportPageWidget({Key? key}) : super(key: key);
 
   @override
   _DisconfirmReportPageWidgetState createState() =>

@@ -9,16 +9,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LogInPageWidget extends StatefulWidget {
-  const LogInPageWidget({Key key}) : super(key: key);
+  const LogInPageWidget({Key? key}) : super(key: key);
 
   @override
   _LogInPageWidgetState createState() => _LogInPageWidgetState();
 }
 
 class _LogInPageWidgetState extends State<LogInPageWidget> {
-  TextEditingController emailTextController;
-  TextEditingController passwordTextController;
-  bool passwordVisibility;
+  late TextEditingController emailTextController;
+  late TextEditingController passwordTextController;
+  late bool passwordVisibility;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -105,7 +105,7 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                     ),
                     textAlign: TextAlign.center,
                     validator: (val) {
-                      if (val.isEmpty) {
+                      if (val!.isEmpty) {
                         return 'الرجاء  ادخال رقم الهويه/الإقامة';
                       }
                       if (val.length < 10) {
@@ -168,10 +168,10 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                     ),
                     textAlign: TextAlign.end,
                     validator: (val) {
-                      if (val.isEmpty) {
+                      if (val!.isEmpty) {
                         return 'الرجاء  ادخال كلمة السر';
                       }
-                      
+
                       return null;
                     },
                   ),
@@ -180,23 +180,23 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      if (!formKey.currentState.validate()) {
+                      if (!formKey.currentState!.validate()) {
                         return;
                       }
-                        final String Driver_ID=emailTextController.text;
+                      final String Driver_ID = emailTextController.text;
 
-                        QuerySnapshot snap = await FirebaseFirestore.instance.collection("Car_driver")
-                          .where("Driver_ID", isEqualTo: Driver_ID).get();
+                      QuerySnapshot snap = await FirebaseFirestore.instance
+                          .collection("Car_driver")
+                          .where("Driver_ID", isEqualTo: Driver_ID)
+                          .get();
                       final user = await signInWithEmail(
                         context,
                         snap.docs[0]['email'],
                         passwordTextController.text,
                       );
                       if (user == null) {
-                       // print("رقم الهوية/الإقامة او كلمة السر غير صحيحه");
-                      
-                  
-                        
+                        // print("رقم الهوية/الإقامة او كلمة السر غير صحيحه");
+
                         return;
                       }
 

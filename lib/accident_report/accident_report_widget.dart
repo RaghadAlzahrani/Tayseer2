@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AccidentReportWidget extends StatefulWidget {
-  const AccidentReportWidget({Key key}) : super(key: key);
+  const AccidentReportWidget({Key? key}) : super(key: key);
 
   @override
   _AccidentReportWidgetState createState() => _AccidentReportWidgetState();

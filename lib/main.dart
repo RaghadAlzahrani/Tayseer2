@@ -23,8 +23,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Stream<TayseerFirebaseUser> userStream;
-  TayseerFirebaseUser initialUser;
+  late Stream<TayseerFirebaseUser> userStream;
+  late TayseerFirebaseUser initialUser;
   bool displaySplashImage = true;
 
   @override
@@ -40,6 +40,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Tayseer',
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -58,7 +59,7 @@ class _MyAppState extends State<MyApp> {
               ),
             )
           : currentUser.loggedIn
-              ?  LogInPageWidget()
+              ? LogInPageWidget()
               : LogInPageWidget(),
     );
   }

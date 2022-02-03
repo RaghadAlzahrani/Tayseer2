@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ConfirmationPageWidget extends StatefulWidget {
-  const ConfirmationPageWidget({Key key}) : super(key: key);
+  const ConfirmationPageWidget({Key? key}) : super(key: key);
 
   @override
   _ConfirmationPageWidgetState createState() => _ConfirmationPageWidgetState();

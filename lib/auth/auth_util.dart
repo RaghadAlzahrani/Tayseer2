@@ -11,7 +11,7 @@ export 'google_auth.dart';
 
 /// Tries to sign in or create an account using Firebase Auth.
 /// Returns the User object if sign in was successful.
-Future<User> signInOrCreateAccount(
+Future<User?> signInOrCreateAccount(
     BuildContext context, Future<UserCredential> Function() signInFunc) async {
   try {
     final userCredential = await signInFunc();
@@ -25,12 +25,13 @@ Future<User> signInOrCreateAccount(
   }
 }
 
-Future signOut() {
+signOut() {
   _currentJwtToken = '';
   FirebaseAuth.instance.signOut();
 }
 
-Future resetPassword({String email, BuildContext context}) async {
+Future resetPassword(
+    {required String email, required BuildContext context}) async {
   try {
     await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
   } on FirebaseAuthException catch (e) {
@@ -65,14 +66,14 @@ String get currentJwtToken => _currentJwtToken ?? '';
 bool get currentUserEmailVerified => currentUser?.user?.emailVerified ?? false;
 
 // Set when using phone verification (after phone number is provided).
-String _phoneAuthVerificationCode;
+late String _phoneAuthVerificationCode;
 // Set when using phone sign in in web mode (ignored otherwise).
-ConfirmationResult _webPhoneAuthConfirmationResult;
+late ConfirmationResult _webPhoneAuthConfirmationResult;
 
 Future beginPhoneAuth({
-  BuildContext context,
-  String phoneNumber,
-  VoidCallback onCodeSent,
+  required BuildContext context,
+  required String phoneNumber,
+  required VoidCallback onCodeSent,
 }) async {
   if (kIsWeb) {
     _webPhoneAuthConfirmationResult =
@@ -112,8 +113,8 @@ Future beginPhoneAuth({
 }
 
 Future verifySmsCode({
-  BuildContext context,
-  String smsCode,
+  required BuildContext context,
+  required String smsCode,
 }) async {
   if (kIsWeb) {
     return signInOrCreateAccount(

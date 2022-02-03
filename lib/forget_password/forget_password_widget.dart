@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ForgetPasswordWidget extends StatefulWidget {
-  const ForgetPasswordWidget({Key key}) : super(key: key);
+  const ForgetPasswordWidget({Key? key}) : super(key: key);
 
   @override
   _ForgetPasswordWidgetState createState() => _ForgetPasswordWidgetState();
 }
 
 class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
-  TextEditingController textController;
+  late TextEditingController textController;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -101,7 +101,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                         textAlign: TextAlign.center,
                         keyboardType: TextInputType.number,
                         validator: (val) {
-                          if (val.isEmpty) {
+                          if (val!.isEmpty) {
                             return 'الرجاء  ادخال رقم الهويه/الإقامة';
                           }
                           if (val.length < 10) {

@@ -22,85 +22,85 @@ export 'schema/accident_record.dart';
 export 'schema/fault_assesment_record.dart';
 
 /// Functions to query CarDriverRecords (as a Stream and as a Future).
-Stream<List<CarDriverRecord>> queryCarDriverRecord(
-        {Query Function(Query) queryBuilder,
+Stream<List<CarDriverRecord?>> queryCarDriverRecord(
+        {required Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(CarDriverRecord.collection, CarDriverRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Future<List<CarDriverRecord>> queryCarDriverRecordOnce(
-        {Query Function(Query) queryBuilder,
+Future<List<CarDriverRecord?>> queryCarDriverRecordOnce(
+        {required Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollectionOnce(CarDriverRecord.collection, CarDriverRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 /// Functions to query CarRecords (as a Stream and as a Future).
-Stream<List<CarRecord>> queryCarRecord(
-        {Query Function(Query) queryBuilder,
+Stream<List<CarRecord?>> queryCarRecord(
+        {required Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(CarRecord.collection, CarRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Future<List<CarRecord>> queryCarRecordOnce(
-        {Query Function(Query) queryBuilder,
+Future<List<CarRecord?>> queryCarRecordOnce(
+        {required Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollectionOnce(CarRecord.collection, CarRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 /// Functions to query TrackingRecords (as a Stream and as a Future).
-Stream<List<TrackingRecord>> queryTrackingRecord(
-        {Query Function(Query) queryBuilder,
+Stream<List<TrackingRecord?>> queryTrackingRecord(
+        {required Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(TrackingRecord.collection, TrackingRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Future<List<TrackingRecord>> queryTrackingRecordOnce(
-        {Query Function(Query) queryBuilder,
+Future<List<TrackingRecord?>> queryTrackingRecordOnce(
+        {required Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollectionOnce(TrackingRecord.collection, TrackingRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 /// Functions to query AccidentRecords (as a Stream and as a Future).
-Stream<List<AccidentRecord>> queryAccidentRecord(
-        {Query Function(Query) queryBuilder,
+Stream<List<AccidentRecord?>> queryAccidentRecord(
+        {required Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(AccidentRecord.collection, AccidentRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Future<List<AccidentRecord>> queryAccidentRecordOnce(
-        {Query Function(Query) queryBuilder,
+Future<List<AccidentRecord?>> queryAccidentRecordOnce(
+        {required Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollectionOnce(AccidentRecord.collection, AccidentRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 /// Functions to query FaultAssesmentRecords (as a Stream and as a Future).
-Stream<List<FaultAssesmentRecord>> queryFaultAssesmentRecord(
-        {Query Function(Query) queryBuilder,
+Stream<List<FaultAssesmentRecord?>> queryFaultAssesmentRecord(
+        {required Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(
         FaultAssesmentRecord.collection, FaultAssesmentRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Future<List<FaultAssesmentRecord>> queryFaultAssesmentRecordOnce(
-        {Query Function(Query) queryBuilder,
+Future<List<FaultAssesmentRecord?>> queryFaultAssesmentRecordOnce(
+        {required Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollectionOnce(
         FaultAssesmentRecord.collection, FaultAssesmentRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Stream<List<T>> queryCollection<T>(
+Stream<List<T?>> queryCollection<T>(
     CollectionReference collection, Serializer<T> serializer,
-    {Query Function(Query) queryBuilder,
+    {required Query Function(Query) queryBuilder,
     int limit = -1,
     bool singleRecord = false}) {
   final builder = queryBuilder ?? (q) => q;
@@ -119,9 +119,9 @@ Stream<List<T>> queryCollection<T>(
       .toList());
 }
 
-Future<List<T>> queryCollectionOnce<T>(
+Future<List<T?>> queryCollectionOnce<T>(
     CollectionReference collection, Serializer<T> serializer,
-    {Query Function(Query) queryBuilder,
+    {required Query Function(Query) queryBuilder,
     int limit = -1,
     bool singleRecord = false}) {
   final builder = queryBuilder ?? (q) => q;
