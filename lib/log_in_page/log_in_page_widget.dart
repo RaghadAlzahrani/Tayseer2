@@ -171,9 +171,6 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                       if (val.isEmpty) {
                         return 'الرجاء  ادخال كلمة السر';
                       }
-                        if(val.length<7){
-                        return 'يجب ان تحتوي كلمة السر على ٧ رموز او اكثر';
-                      }
                       
                       return null;
                     },
@@ -184,22 +181,7 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                   child: FFButtonWidget(
                     onPressed: () async {
                       if (!formKey.currentState.validate()) {
-                            showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: Text('فشل تسجيل الدخول'),
-              content: Text("رقم الهوية/الإقامة او كلمة السر خاطئة"),
-              actions: [
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('موافق')),
-              ],
-            );
-          });
-
+                        return;
                       }
                         final String Driver_ID=emailTextController.text;
 
@@ -210,22 +192,12 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                         snap.docs[0]['email'],
                         passwordTextController.text,
                       );
-                        if (snap == null) {
-                          showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: Text('فشل تسجيل الدخول'),
-              content: Text("رقم الهوية/الإقامة او كلمة السر خاطئة"),
-              actions: [
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('موافق')),
-              ],
-            );
-          });
+                      if (user == null) {
+                       // print("رقم الهوية/الإقامة او كلمة السر غير صحيحه");
+                      
+                  
+                        
+                        return;
                       }
 
                       await Navigator.pushAndRemoveUntil(
