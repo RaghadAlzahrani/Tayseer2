@@ -179,7 +179,9 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                     },
                   ),
                 ),
+                
                 Padding(
+                  
                   padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
@@ -205,6 +207,13 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
 
                         QuerySnapshot snap = await FirebaseFirestore.instance.collection("Car_driver")
                           .where("Driver_ID", isEqualTo: Driver_ID).get();
+                          if (snap.size!=0){
+
+
+
+
+                        
+                         
                       final user = await signInWithEmail(
                         context,
                         snap.docs[0]['email'],
@@ -217,7 +226,7 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                         
                         return;
                       }
-
+                          
                       await Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
@@ -225,7 +234,15 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                         ),
                         (r) => false,
                       );
+                    }else{
+print( Text(
+    'الرقم غير صحيح',
+    style: FlutterFlowTheme.bodyText1)
+  
+);
+}
                     },
+                    
                     text: 'تسجيل الدخول',
                     options: FFButtonOptions(
                       width: 200,
