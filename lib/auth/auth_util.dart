@@ -19,7 +19,7 @@ Future<User> signInOrCreateAccount(
   } on FirebaseAuthException catch (e) {
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Error: ${e.message}')),
+      SnackBar(content: Text('رقم الهوية/الإقامة او كلمة السر خاطئة')),
     );
     return null;
   }

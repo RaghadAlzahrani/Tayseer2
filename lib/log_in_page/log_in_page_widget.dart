@@ -186,22 +186,7 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                   child: FFButtonWidget(
                     onPressed: () async {
                       if (!formKey.currentState.validate()) {
-                            showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: Text('فشل تسجيل الدخول'),
-              content: Text("رقم الهوية/الإقامة او كلمة السر خاطئة"),
-              actions: [
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('موافق')),
-              ],
-            );
-          });
-
+                         return null;
                       }
                         final String Driver_ID=emailTextController.text;
 
@@ -209,11 +194,6 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                           .where("Driver_ID", isEqualTo: Driver_ID).get();
                           if (snap.size!=0){
 
-
-
-
-                        
-                         
                       final user = await signInWithEmail(
                         context,
                         snap.docs[0]['email'],
@@ -221,9 +201,7 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                       );
                       if (user == null) {
                        // print("رقم الهوية/الإقامة او كلمة السر غير صحيحه");
-                      
-                  
-                        
+                       
                         return;
                       }
                           
@@ -235,11 +213,13 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                         (r) => false,
                       );
                     }else{
-print( Text(
-    'الرقم غير صحيح',
-    style: FlutterFlowTheme.bodyText1)
+                      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('رقم الهوية/الإقامة او كلمة السر خاطئة')),
+    ); 
+        
   
-);
+
 }
                     },
                     
