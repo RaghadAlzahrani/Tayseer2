@@ -302,6 +302,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "get",
+      "rootUri": "file:///Users/khawlaabdulaziz/Documents/SWE444/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "glob",
       "rootUri": "file:///Users/khawlaabdulaziz/Documents/SWE444/flutter/.pub-cache/hosted/pub.dartlang.org/glob-2.0.2",
       "packageUri": "lib/",
@@ -746,7 +752,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2022-02-01T19:19:44.749780Z",
+  "generated": "2022-02-04T14:30:37.609632Z",
   "generator": "pub",
   "generatorVersion": "2.15.0-178.1.beta"
 }

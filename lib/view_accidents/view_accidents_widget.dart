@@ -1,8 +1,11 @@
+import 'package:tayseer/home_page/home_page_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 
 class ViewAccidentsWidget extends StatefulWidget {
   const ViewAccidentsWidget({Key key}) : super(key: key);
@@ -102,7 +105,7 @@ class _ViewAccidentsWidgetState extends State<ViewAccidentsWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 20, 0, 0),
                                   child: Text(
-                                    'الموقع: ',
+                                    ' : الموقع ',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w600,
@@ -113,7 +116,7 @@ class _ViewAccidentsWidgetState extends State<ViewAccidentsWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 5, 0, 0),
                                   child: Text(
-                                    'الوقت:',
+                                    ' : الوقت',
                                     textAlign: TextAlign.end,
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Poppins',
@@ -125,7 +128,7 @@ class _ViewAccidentsWidgetState extends State<ViewAccidentsWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 5, 0, 0),
                                   child: Text(
-                                    'رقم التقرير:',
+                                    ' : رقم التقرير',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w600,
@@ -145,11 +148,19 @@ class _ViewAccidentsWidgetState extends State<ViewAccidentsWidget> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(10, 60, 0, 0),
-            child: Icon(
-              Icons.chevron_left,
+            child:   IconButton(
+              icon : new Icon(Icons.chevron_left , size: 50,),
               color: Color(0xFF46494D),
-              size: 50,
-            ),
+              //size: 50,
+              onPressed: () async =>  await Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomePageWidget(),
+                        ),
+                        (r) => false,
+  )
+,  
+            ),  
           ),
           Align(
             alignment: AlignmentDirectional(0, -0.82),
