@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  google_maps_flutter: ^2.1.1
+  geolocator: ^8.0.5
   auto_size_text: 3.0.0
   built_collection: 5.1.1
   built_value: 8.1.3
