@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:tayseer/Tracking/Tracking.dart';
 
 import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -171,7 +172,7 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                       if (val.isEmpty) {
                         return 'الرجاء  ادخال كلمة السر';
                       }
-                      
+
                       return null;
                     },
                   ),
@@ -183,27 +184,27 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                       if (!formKey.currentState.validate()) {
                         return;
                       }
-                        final String Driver_ID=emailTextController.text;
+                      final String Driver_ID = emailTextController.text;
 
-                        QuerySnapshot snap = await FirebaseFirestore.instance.collection("Car_driver")
-                          .where("Driver_ID", isEqualTo: Driver_ID).get();
+                      QuerySnapshot snap = await FirebaseFirestore.instance
+                          .collection("Car_driver")
+                          .where("Driver_ID", isEqualTo: Driver_ID)
+                          .get();
                       final user = await signInWithEmail(
                         context,
                         snap.docs[0]['email'],
                         passwordTextController.text,
                       );
                       if (user == null) {
-                       // print("رقم الهوية/الإقامة او كلمة السر غير صحيحه");
-                      
-                  
-                        
+                        // print("رقم الهوية/الإقامة او كلمة السر غير صحيحه");
+
                         return;
                       }
 
                       await Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => HomePageWidget(),
+                          builder: (context) => Tracking(),
                         ),
                         (r) => false,
                       );

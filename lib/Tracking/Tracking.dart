@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 import 'package:intl/intl.dart';
@@ -72,7 +73,11 @@ class _TrackingState extends State<Tracking> {
 
       FirebaseFirestore.instance
           .collection('Tracking')
-          .doc('rawan')
+          .doc('${FirebaseAuth.instance.currentUser.email}')
+          .set({'email': 'FirebaseAuth.instance.currentUser.email'});
+      FirebaseFirestore.instance
+          .collection('Tracking')
+          .doc('${FirebaseAuth.instance.currentUser.email}')
           .collection('locations')
           .doc('${currentLocation.time}')
           .set({

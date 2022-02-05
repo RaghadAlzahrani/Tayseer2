@@ -1,20 +1,17 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'Tracking/Tracking.dart';
 import 'auth/firebase_user_provider.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:tayseer/log_in_page/log_in_page_widget.dart';
-import 'package:tayseer/home_page/home_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp(Tracking());
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {

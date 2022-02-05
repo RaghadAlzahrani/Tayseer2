@@ -1,4 +1,4 @@
-#Thu Feb 03 18:53:23 GMT+03:00 2022
+#Fri Feb 04 01:28:11 GMT+03:00 2022
 path.4=classes_1.dex
 path.3=classes_0.dex
 path.2=classes2.dex
