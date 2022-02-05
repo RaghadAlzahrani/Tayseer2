@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/raghad/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "/Users/almaha/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
-                    "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/a125ac538681b59d0874000e6786eae0/jetified-play-services-basement-16.0.1/res/values-pt-rBR/values.xml",
+                    "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/33b6368d83c132b264feb32b1e57f714/jetified-play-services-basement-16.0.1/res/values-pt-rBR/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/88020dec552f2342fb79a1d65286ec51/jetified-play-services-base-16.0.1/res/values-pt-rBR/values.xml",
+                    "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/300b3729114291d35c523ffdc35ed62f/jetified-play-services-base-16.0.1/res/values-pt-rBR/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/9de673a8f015fc0e6e64c74c90834b97/core-1.1.0/res/values-pt-rBR/values-pt-rBR.xml",
+                    "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/9de673a8f015fc0e6e64c74c90834b97/core-1.1.0/res/values-pt-rBR/values-pt-rBR.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -57,10 +57,10 @@
             ]
         },
         {
-            "outputFile": "/Users/raghad/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "/Users/almaha/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
-                    "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/a125ac538681b59d0874000e6786eae0/jetified-play-services-basement-16.0.1/res/values-pt-rBR/values.xml",
+                    "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/33b6368d83c132b264feb32b1e57f714/jetified-play-services-basement-16.0.1/res/values-pt-rBR/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -77,7 +77,7 @@
                     }
                 },
                 {
-                    "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/88020dec552f2342fb79a1d65286ec51/jetified-play-services-base-16.0.1/res/values-pt-rBR/values.xml",
+                    "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/300b3729114291d35c523ffdc35ed62f/jetified-play-services-base-16.0.1/res/values-pt-rBR/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -94,7 +94,7 @@
                     }
                 },
                 {
-                    "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/9de673a8f015fc0e6e64c74c90834b97/core-1.1.0/res/values-pt-rBR/values-pt-rBR.xml",
+                    "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/9de673a8f015fc0e6e64c74c90834b97/core-1.1.0/res/values-pt-rBR/values-pt-rBR.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

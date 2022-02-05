@@ -181,19 +181,35 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                   child: FFButtonWidget(
                     onPressed: () async {
                       if (!formKey.currentState.validate()) {
+                     
                         return;
                       }
+                      
                         final String Driver_ID=emailTextController.text;
 
                         QuerySnapshot snap = await FirebaseFirestore.instance.collection("Car_driver")
                           .where("Driver_ID", isEqualTo: Driver_ID).get();
-                      final user = await signInWithEmail(
+                        print(snap);
+                         /* if(snap.toString()==null){
+                          print("D");
+                            Padding(
+  padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+  child: Text(
+    'رقم الهويه غير صحيح',
+    style: FlutterFlowTheme.bodyText1,
+  ),
+);
+return;
+                          }*/
+                          print("F");
+                     final user = await signInWithEmail(
                         context,
                         snap.docs[0]['email'],
                         passwordTextController.text,
-                      );
+                      )
+               ;
                       if (user == null) {
-                       // print("رقم الهوية/الإقامة او كلمة السر غير صحيحه");
+                       print("رقم الهوية/الإقامة او كلمة السر غير صحيحه");
                       
                   
                         

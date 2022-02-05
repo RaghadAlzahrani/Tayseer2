@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/raghad/Documents/GitHub/Tayseer2/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "/Users/almaha/Documents/GitHub/Tayseer2/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
-                    "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/9de673a8f015fc0e6e64c74c90834b97/core-1.1.0/res/values-en-rXC/values-en-rXC.xml",
+                    "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/ba6533313136848b910baf4c397c178f/browser-1.2.0/res/values-en-rXC/values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,256,455,667",
+                        "endColumns": "200,198,211,195",
+                        "endOffsets": "251,450,662,858"
+                    }
+                },
+                {
+                    "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/9de673a8f015fc0e6e64c74c90834b97/core-1.1.0/res/values-en-rXC/values-en-rXC.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -18,16 +28,6 @@
                         "startOffsets": "863",
                         "endColumns": "202",
                         "endOffsets": "1061"
-                    }
-                },
-                {
-                    "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/ba6533313136848b910baf4c397c178f/browser-1.2.0/res/values-en-rXC/values-en-rXC.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,256,455,667",
-                        "endColumns": "200,198,211,195",
-                        "endOffsets": "251,450,662,858"
                     }
                 }
             ]

@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/Users/raghad/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
-        "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/88020dec552f2342fb79a1d65286ec51/jetified-play-services-base-16.0.1/res/color/common_google_signin_btn_tint.xml"
+        "merged": "/Users/almaha/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/300b3729114291d35c523ffdc35ed62f/jetified-play-services-base-16.0.1/res/color/common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "/Users/raghad/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
-        "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/88020dec552f2342fb79a1d65286ec51/jetified-play-services-base-16.0.1/res/color/common_google_signin_btn_text_dark.xml"
+        "merged": "/Users/almaha/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/300b3729114291d35c523ffdc35ed62f/jetified-play-services-base-16.0.1/res/color/common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "/Users/raghad/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
-        "source": "/Users/raghad/.gradle/caches/transforms-2/files-2.1/88020dec552f2342fb79a1d65286ec51/jetified-play-services-base-16.0.1/res/color/common_google_signin_btn_text_light.xml"
+        "merged": "/Users/almaha/Documents/GitHub/Tayseer2/build/google_sign_in/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/almaha/.gradle/caches/transforms-2/files-2.1/300b3729114291d35c523ffdc35ed62f/jetified-play-services-base-16.0.1/res/color/common_google_signin_btn_tint.xml"
     }
 ]
