@@ -1,3 +1,5 @@
+import 'package:tayseer/Tracking/Tracking.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -13,6 +15,12 @@ class HomePageWidget extends StatefulWidget {
 
 class _HomePageWidgetState extends State<HomePageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    requestPermission();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

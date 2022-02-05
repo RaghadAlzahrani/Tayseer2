@@ -4,126 +4,46 @@ import 'package:location/location.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:tayseer/backend/backend.dart';
 
-class Tracking extends StatefulWidget {
-  @override
-  State<Tracking> createState() => _TrackingState();
+List<LocationClass> list = [];
+Location location = new Location();
+/*late*/ bool _serviceEnabled;
+/*late*/ LocationData _locationData;
+
+requestPermission() async {
+  _serviceEnabled = await location.serviceEnabled();
+  while (!_serviceEnabled) {
+    _serviceEnabled = await location.requestService();
+  }
+  while (!await Permission.locationAlways.isGranted)
+    await Permission.locationAlways.request();
+  location.enableBackgroundMode(enable: true);
+
+  await location.changeSettings(
+      accuracy: LocationAccuracy.navigation, distanceFilter: 3
+      //if 10 seconds are passed AND* if the phone is moved at least 5 meters, give the location. must be (both)
+      );
+  getcurrentLocation();
 }
 
-class _TrackingState extends State<Tracking> {
-  List<LocationClass> list = [];
-  Location location = new Location();
-  /*late*/ bool _serviceEnabled;
-  /*late*/ LocationData _locationData;
-
-  @override
-  void initState() {
-    list.clear();
-    requestPermission();
-
-    super.initState();
-  }
-
-  requestPermission() async {
-    _serviceEnabled = await location.serviceEnabled();
-    while (!_serviceEnabled) {
-      _serviceEnabled = await location.requestService();
-    }
-    while (!await Permission.locationAlways.isGranted ||
-        await Permission.location.isPermanentlyDenied)
-      await Permission.locationAlways.request();
-    location.enableBackgroundMode(enable: true);
-
-    await location.changeSettings(
-        accuracy: LocationAccuracy.navigation, distanceFilter: 3
-        //if 10 seconds are passed AND* if the phone is moved at least 5 meters, give the location. must be (both)
-        );
-    getcurrentLocation();
-  }
-
-  getcurrentLocation() async {
-    //_locationData = await location.getLocation();
-    /* print('hi');
-    setState(() {
-      list.add(LocationClass(
-          lat: _locationData.latitude,
-          long: _locationData.longitude,
-          time: _locationData.time,
-          speed: _locationData.speed));
-    });*/
-
-    location.onLocationChanged.listen((LocationData currentLocation) {
-      setState(() {
-        list.add(LocationClass(
-            /* lat:*/ currentLocation.latitude,
-            /*long:*/ currentLocation.longitude,
-            /*time:*/ currentLocation.time,
-            /*speed:*/ currentLocation.speed));
-      });
-
-      FirebaseFirestore.instance
-          .collection('Tracking')
-          .doc('${FirebaseAuth.instance.currentUser.email}')
-          .set({'email': '${FirebaseAuth.instance.currentUser.email}'});
-      FirebaseFirestore.instance
-          .collection('Tracking')
-          .doc('${FirebaseAuth.instance.currentUser.email}')
-          .collection('locations')
-          .doc(
-              '${DateTime.fromMillisecondsSinceEpoch((currentLocation.time).toInt())}')
-          .set({
-        'location':
-            GeoPoint(currentLocation.latitude, currentLocation.longitude),
-        'time':
-            DateTime.fromMillisecondsSinceEpoch((currentLocation.time).toInt()),
-        'speed': currentLocation.speed
-      });
+getcurrentLocation() async {
+  location.onLocationChanged.listen((LocationData currentLocation) {
+    FirebaseFirestore.instance
+        .collection('Tracking')
+        .doc('${FirebaseAuth.instance.currentUser.email}')
+        .set({'email': '${FirebaseAuth.instance.currentUser.email}'});
+    FirebaseFirestore.instance
+        .collection('Tracking')
+        .doc('${FirebaseAuth.instance.currentUser.email}')
+        .collection('locations')
+        .doc(
+            '${DateTime.fromMillisecondsSinceEpoch((currentLocation.time).toInt())}')
+        .set({
+      'location': GeoPoint(currentLocation.latitude, currentLocation.longitude),
+      'time':
+          DateTime.fromMillisecondsSinceEpoch((currentLocation.time).toInt()),
+      'speed': currentLocation.speed
     });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Container(
-          width: 800,
-          height: 2000,
-          decoration: BoxDecoration(color: Colors.white),
-          child: Column(children: [
-            SizedBox(
-              height: 50,
-            ),
-            Text(
-              'locations: ',
-              style: TextStyle(color: Colors.amber, fontSize: 18),
-            ),
-            Container(
-                width: 500,
-                height: 755,
-                child: ListView.builder(
-                    padding: const EdgeInsets.all(8),
-                    itemCount: list.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Column(
-                        children: [
-                          Text('location $index:',
-                              style:
-                                  TextStyle(color: Colors.amber, fontSize: 18)),
-                          Text(
-                              'lat: ${list[index].lat} \n long: ${list[index].long}',
-                              style:
-                                  TextStyle(color: Colors.green, fontSize: 18)),
-                          Text(
-                              'time: ${DateTime.fromMillisecondsSinceEpoch((list[index].time).toInt())} \n speed: ${list[index].speed} m\\s ',
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 18)),
-                          SizedBox(
-                            height: 20,
-                          )
-                        ],
-                      );
-                    }))
-          ])),
-    );
-  }
+  });
 }
 
 class LocationClass {

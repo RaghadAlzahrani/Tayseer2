@@ -204,7 +204,7 @@ class _LogInPageWidgetState extends State<LogInPageWidget> {
                       await Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Tracking(),
+                          builder: (context) => HomePageWidget(),
                         ),
                         (r) => false,
                       );

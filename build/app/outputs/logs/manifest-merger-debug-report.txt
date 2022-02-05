@@ -13,6 +13,7 @@ MERGED from [:sqflite] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayse
 MERGED from [:url_launcher] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [:path_provider_android] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:location] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-18:12
+MERGED from [:permission_handler] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:google_sign_in] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\rawan\.gradle\caches\transforms-2\files-2.1\1d404c45d59147c7cad48ebf519f28a7\jetified-firebase-auth-21.0.1\AndroidManifest.xml:17:1-83:12
 MERGED from [com.google.firebase:firebase-firestore:24.0.0] C:\Users\rawan\.gradle\caches\transforms-2\files-2.1\0bc53fc3bc5cd30336748d1bde1c23be\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:2:1-26:12
@@ -209,6 +210,8 @@ MERGED from [:path_provider_android] C:\Users\rawan\Desktop\uni\level7\444\TryIt
 MERGED from [:path_provider_android] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:location] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:location] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] C:\Users\rawan\Desktop\uni\level7\444\TryIt\Counter\Tayseer2\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\rawan\.gradle\caches\transforms-2\files-2.1\1d404c45d59147c7cad48ebf519f28a7\jetified-firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
