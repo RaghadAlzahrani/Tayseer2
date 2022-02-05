@@ -1,8 +1,7 @@
-import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
-import 'package:intl/intl.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:tayseer/backend/backend.dart';
 
 class Tracking extends StatefulWidget {
@@ -14,7 +13,6 @@ class _TrackingState extends State<Tracking> {
   List<LocationClass> list = [];
   Location location = new Location();
   /*late*/ bool _serviceEnabled;
-  /*late*/ PermissionStatus _permissionGranted;
   /*late*/ LocationData _locationData;
 
   @override
@@ -27,23 +25,14 @@ class _TrackingState extends State<Tracking> {
 
   requestPermission() async {
     _serviceEnabled = await location.serviceEnabled();
-    if (!_serviceEnabled) {
+    while (!_serviceEnabled) {
       _serviceEnabled = await location.requestService();
-      if (!_serviceEnabled) {
-        return;
-      }
     }
-
-    _permissionGranted = await location.hasPermission();
-    if (_permissionGranted == PermissionStatus.denied) {
-      print('denied');
-      _permissionGranted = await location.requestPermission();
-      if (_permissionGranted != PermissionStatus.granted) {
-        print('denied');
-        return;
-      }
-    }
+    while (!await Permission.locationAlways.isGranted ||
+        await Permission.location.isPermanentlyDenied)
+      await Permission.locationAlways.request();
     location.enableBackgroundMode(enable: true);
+
     await location.changeSettings(
         accuracy: LocationAccuracy.navigation, distanceFilter: 3
         //if 10 seconds are passed AND* if the phone is moved at least 5 meters, give the location. must be (both)
@@ -74,16 +63,18 @@ class _TrackingState extends State<Tracking> {
       FirebaseFirestore.instance
           .collection('Tracking')
           .doc('${FirebaseAuth.instance.currentUser.email}')
-          .set({'email': 'FirebaseAuth.instance.currentUser.email'});
+          .set({'email': '${FirebaseAuth.instance.currentUser.email}'});
       FirebaseFirestore.instance
           .collection('Tracking')
           .doc('${FirebaseAuth.instance.currentUser.email}')
           .collection('locations')
-          .doc('${currentLocation.time}')
+          .doc(
+              '${DateTime.fromMillisecondsSinceEpoch((currentLocation.time).toInt())}')
           .set({
-        'lat': currentLocation.latitude,
-        'long': currentLocation.longitude,
-        'time': currentLocation.time,
+        'location':
+            GeoPoint(currentLocation.latitude, currentLocation.longitude),
+        'time':
+            DateTime.fromMillisecondsSinceEpoch((currentLocation.time).toInt()),
         'speed': currentLocation.speed
       });
     });
