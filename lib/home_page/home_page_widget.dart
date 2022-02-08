@@ -1,4 +1,5 @@
 import 'package:tayseer/Tracking/Tracking.dart';
+import 'package:tayseer/logout.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -110,15 +111,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
-                                child: Text(
-                                  'تسجيل خروج',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: Color(0xFF46494D),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
+                                child: TextButton(
+                                    onPressed: () => logout(),
+                                    child: Text(
+                                      'تسجيل خروج',
+                                      style:
+                                          FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'Poppins',
+                                        color: Color(0xFF46494D),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    )),
                               ),
                               Icon(
                                 Icons.logout,

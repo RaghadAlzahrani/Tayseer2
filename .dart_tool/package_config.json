@@ -302,6 +302,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "get",
+      "rootUri": "file:///C:/Users/rawan/src/flutterSDK/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "glob",
       "rootUri": "file:///C:/Users/rawan/src/flutterSDK/flutter/.pub-cache/hosted/pub.dartlang.org/glob-2.0.2",
       "packageUri": "lib/",
@@ -776,7 +782,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2022-02-05T17:21:54.692746Z",
+  "generated": "2022-02-08T13:46:53.669360Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }
