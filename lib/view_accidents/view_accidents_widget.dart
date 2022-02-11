@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tayseer/home_page/home_page_widget.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -6,6 +7,8 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
+import 'package:date_format/date_format.dart';
 
 class ViewAccidentsWidget extends StatefulWidget {
   const ViewAccidentsWidget({Key key}) : super(key: key);
@@ -17,38 +20,44 @@ class ViewAccidentsWidget extends StatefulWidget {
 class _ViewAccidentsWidgetState extends State<ViewAccidentsWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   List accidents = [];
+  var location;
+  var time;
+  var id;
 @override
   void initState() {
    addtolist();
     super.initState();
   }
 
-   void addtolist(){
-int count = 0;
-        var value = {
-          'location': 'طريق الملك خالد',
-          'time': DateTime.now(),
-          'id': '1124567880',
+   void addtolist() async{
+
+       int count = 0;
+    var exists = await FirebaseFirestore.instance
+        .collection('Accident').snapshots()
+        .listen((event) {
+      event.docs.forEach((element) async {
+        setState(() {
+          location = element.data()['Location'].toString();
+          time = element.data()['Date_time'].toString();
+          id = element.id.toString();
+        });
+String dtime = DateFormat(DateFormat.YEAR_ABBR_MONTH_WEEKDAY_DAY).format(DateTime.now());
+String ddtime = DateFormat.Hms().format(DateTime.now());
+
+  var value = {
+          'location': 'اضغط هنا',
+          'time': '${dtime}',
+          'id': '${ddtime}',
          
         };
 
-          var value2 = {
-          'location': 'طريق الملك عبدالله',
-          'time': DateTime.now(),
-          'id': '1124567880',
-         
-        };
+accidents.insert(count++, value);
+   });
+   
+         } );
+      
 
-           var value3 = {
-          'location': 'طريق الملك سلمان',
-          'time': DateTime.now(),
-          'id': '1124567880',
-         
-        };
-         accidents.insert(count++, value3);
-        accidents.insert(count++, value2);
- accidents.insert(count++, value);
-
+    
 
    }
   @override
@@ -162,7 +171,7 @@ int count = 0;
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 5, 0, 0),
                                   child: Text(
-                                    ' ${data[i]['time']} : الوقت',
+                                    ' ${data[i]['time']} : التاريخ',
                                     textAlign: TextAlign.end,
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Poppins',
@@ -174,7 +183,7 @@ int count = 0;
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 5, 0, 0),
                                   child: Text(
-                                    ' ${data[i]['id']} : رقم التقرير',
+                                    ' ${data[i]['id']} : الوقت',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w600,
